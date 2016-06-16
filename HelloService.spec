@@ -1,5 +1,5 @@
 /*
-A KBase module: HelloService
+A KBase module: HelloService v2
 */
 
 module HelloService {
