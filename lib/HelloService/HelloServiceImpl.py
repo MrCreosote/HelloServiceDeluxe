@@ -32,6 +32,7 @@ class HelloService:
         # return variables are: message
         #BEGIN say_hello
         message = "Hello, "+name+".  I am a service."
+        print('returning: ' + message)
         #END say_hello
 
         # At some point might do deeper type checking...
