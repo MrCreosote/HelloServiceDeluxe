@@ -1,13 +1,8 @@
 import unittest
-import os
-import json
-import time
 
 from os import environ
-from ConfigParser import ConfigParser
-from pprint import pprint
+from configparser import ConfigParser
 
-from biokbase.workspace.client import Workspace as workspaceService
 from HelloServiceDeluxe.HelloServiceDeluxeImpl import HelloServiceDeluxe
 from HelloServiceDeluxe import HelloServiceDeluxeServer
 
@@ -27,26 +22,7 @@ class HelloServiceDeluxeTest(unittest.TestCase):
         for nameval in config.items('HelloServiceDeluxe'):
             cls.cfg[nameval[0]] = nameval[1]
         cls.wsURL = cls.cfg['workspace-url']
-        cls.wsClient = workspaceService(cls.wsURL, token=token)
         cls.serviceImpl = HelloServiceDeluxe(cls.cfg)
-
-    @classmethod
-    def tearDownClass(cls):
-        if hasattr(cls, 'wsName'):
-            cls.wsClient.delete_workspace({'workspace': cls.wsName})
-            print('Test workspace was deleted')
-
-    def getWsClient(self):
-        return self.__class__.wsClient
-
-    def getWsName(self):
-        if hasattr(self.__class__, 'wsName'):
-            return self.__class__.wsName
-        suffix = int(time.time() * 1000)
-        wsName = "test_HelloService_" + str(suffix)
-        ret = self.getWsClient().create_workspace({'workspace': wsName})
-        self.__class__.wsName = wsName
-        return wsName
 
     def getImpl(self):
         return self.__class__.serviceImpl

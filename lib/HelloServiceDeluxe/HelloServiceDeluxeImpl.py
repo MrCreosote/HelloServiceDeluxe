@@ -18,9 +18,9 @@ class HelloServiceDeluxe:
     # state. A method could easily clobber the state set by another while
     # the latter method is running.
     ######################################### noqa
-    VERSION = "0.1.0"
+    VERSION = "0.1.1"
     GIT_URL = "https://github.com/mrcreosote/HelloServiceDeluxe.git"
-    GIT_COMMIT_HASH = "25528a3b917ab4f40bc7aba45b08e581e33d985a"
+    GIT_COMMIT_HASH = "10ca14e770178fa3586ed6d710e0f2456ba14da1"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
