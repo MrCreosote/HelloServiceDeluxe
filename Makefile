@@ -1,7 +1,7 @@
-SERVICE = helloservice
-SERVICE_CAPS = HelloService
-SPEC_FILE = HelloService.spec
-URL = https://kbase.us/services/helloservice
+SERVICE = helloservicedeluxe
+SERVICE_CAPS = HelloServiceDeluxe
+SPEC_FILE = HelloServiceDeluxe.spec
+URL = https://kbase.us/services/HelloServiceDeluxe
 DIR = $(shell pwd)
 LIB_DIR = lib
 SCRIPTS_DIR = scripts

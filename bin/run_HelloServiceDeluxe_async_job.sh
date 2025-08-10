@@ -1,4 +1,4 @@
 #!/bin/bash
 script_dir=$(dirname "$(readlink -f "$0")")
 export PYTHONPATH=$script_dir/../lib:$PATH:$PYTHONPATH
-python -u $script_dir/../lib/HelloService/HelloServiceServer.py $1 $2 $3
+python -u $script_dir/../lib/HelloServiceDeluxe/HelloServiceDeluxeServer.py $1 $2 $3

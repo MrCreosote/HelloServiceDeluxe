@@ -8,26 +8,26 @@ from ConfigParser import ConfigParser
 from pprint import pprint
 
 from biokbase.workspace.client import Workspace as workspaceService
-from HelloService.HelloServiceImpl import HelloService
+from HelloServiceDeluxe.HelloServiceDeluxeImpl import HelloServiceDeluxe
 
 
-class HelloServiceTest(unittest.TestCase):
+class HelloServiceDeluxeTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
         token = environ.get('KB_AUTH_TOKEN', None)
-        cls.ctx = {'token': token, 'provenance': [{'service': 'HelloService',
+        cls.ctx = {'token': token, 'provenance': [{'service': 'HelloServiceDeluxe',
             'method': 'please_never_use_it_in_production', 'method_params': []}],
             'authenticated': 1}
         config_file = environ.get('KB_DEPLOYMENT_CONFIG', None)
         cls.cfg = {}
         config = ConfigParser()
         config.read(config_file)
-        for nameval in config.items('HelloService'):
+        for nameval in config.items('HelloServiceDeluxe'):
             cls.cfg[nameval[0]] = nameval[1]
         cls.wsURL = cls.cfg['workspace-url']
         cls.wsClient = workspaceService(cls.wsURL, token=token)
-        cls.serviceImpl = HelloService(cls.cfg)
+        cls.serviceImpl = HelloServiceDeluxe(cls.cfg)
 
     @classmethod
     def tearDownClass(cls):
