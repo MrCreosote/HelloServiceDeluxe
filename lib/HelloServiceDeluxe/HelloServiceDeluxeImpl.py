@@ -41,7 +41,7 @@ class HelloServiceDeluxe:
         # ctx is the context object
         # return variables are: message
         #BEGIN say_hello
-        message = "Hello, "+name+".  I am a service."
+        message = "Hello, "+name+". I am a service."
         print('returning: ' + message)
         #END say_hello
 
