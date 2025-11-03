@@ -342,6 +342,9 @@ class Application(object):
         self.rpc_service.add(impl_HelloServiceDeluxe.say_hellos,
                              name='HelloServiceDeluxe.say_hellos',
                              types=[str, str])
+        self.rpc_service.add(impl_HelloServiceDeluxe.how_rude,
+                             name='HelloServiceDeluxe.how_rude',
+                             types=[str])
         self.rpc_service.add(impl_HelloServiceDeluxe.status,
                              name='HelloServiceDeluxe.status',
                              types=[dict])

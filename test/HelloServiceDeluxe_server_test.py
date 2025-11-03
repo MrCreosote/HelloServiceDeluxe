@@ -50,3 +50,7 @@ class HelloServiceDeluxeTest(unittest.TestCase):
             'Hi Jerry, what a lovely and scintillating person you are'
         ]
         self.assertEqual(ret, exp)
+
+    def test_rude(self):
+        ret = self.getImpl().how_rude(self.getContext(), "Lemuel")
+        self.assertEqual(ret, None)

@@ -18,9 +18,9 @@ class HelloServiceDeluxe:
     # state. A method could easily clobber the state set by another while
     # the latter method is running.
     ######################################### noqa
-    VERSION = "0.1.2"
+    VERSION = "0.1.3"
     GIT_URL = "https://github.com/mrcreosote/HelloServiceDeluxe.git"
-    GIT_COMMIT_HASH = "87f009b00654ea7da7605025d5b11b30d2c7fcd4"
+    GIT_COMMIT_HASH = "3eeaeaa014c14a3ef6a8a1bc3611f5f07e32f73b"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -76,6 +76,16 @@ class HelloServiceDeluxe:
                              'msg2 is not type str as required.')
         # return the results
         return [msg1, msg2]
+
+    def how_rude(self, ctx, name):
+        """
+        :param name: instance of String
+        """
+        # ctx is the context object
+        #BEGIN how_rude
+        print(f"{name} you're a doody butt")
+        #END how_rude
+        pass
 
     def status(self, ctx):
         #BEGIN_STATUS
