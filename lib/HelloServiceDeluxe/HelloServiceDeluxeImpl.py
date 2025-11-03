@@ -18,9 +18,9 @@ class HelloServiceDeluxe:
     # state. A method could easily clobber the state set by another while
     # the latter method is running.
     ######################################### noqa
-    VERSION = "0.1.1"
+    VERSION = "0.1.2"
     GIT_URL = "https://github.com/mrcreosote/HelloServiceDeluxe.git"
-    GIT_COMMIT_HASH = "10ca14e770178fa3586ed6d710e0f2456ba14da1"
+    GIT_COMMIT_HASH = "87f009b00654ea7da7605025d5b11b30d2c7fcd4"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -51,6 +51,32 @@ class HelloServiceDeluxe:
                              'message is not type str as required.')
         # return the results
         return [message]
+
+    def say_hellos(self, ctx, name1, name2):
+        """
+        for testing multiple returns
+        :param name1: instance of String
+        :param name2: instance of String
+        :returns: multiple set - (1) parameter "msg1" of String, (2)
+           parameter "msg2" of String
+        """
+        # ctx is the context object
+        # return variables are: msg1, msg2
+        #BEGIN say_hellos
+        msg1 = f"Hi {name1}, you santimonious lickspittle"
+        msg2 = f"Hi {name2}, what a lovely and scintillating person you are"
+        #END say_hellos
+
+        # At some point might do deeper type checking...
+        if not isinstance(msg1, str):
+            raise ValueError('Method say_hellos return value ' +
+                             'msg1 is not type str as required.')
+        if not isinstance(msg2, str):
+            raise ValueError('Method say_hellos return value ' +
+                             'msg2 is not type str as required.')
+        # return the results
+        return [msg1, msg2]
+
     def status(self, ctx):
         #BEGIN_STATUS
         returnVal = {'state': "OK",

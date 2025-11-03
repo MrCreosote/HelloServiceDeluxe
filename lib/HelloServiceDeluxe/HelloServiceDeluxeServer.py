@@ -130,9 +130,7 @@ class JSONRPCServiceCustom(JSONRPCService):
         object instead of JSON string. This method is mainly only useful for
         debugging purposes.
         """
-        print("call_py")
         rdata = jsondata
-        print(rdata)
         # we already deserialize the json string earlier in the server code, no
         # need to do it again
 #        try:
@@ -146,7 +144,6 @@ class JSONRPCServiceCustom(JSONRPCService):
         if isinstance(rdata, dict) and rdata:
             # It's a single request.
             self._fill_request(request, rdata)
-            print(request)
             respond = self._handle_request(ctx, request)
 
             # Don't respond to notifications
@@ -342,6 +339,9 @@ class Application(object):
         self.rpc_service.add(impl_HelloServiceDeluxe.say_hello,
                              name='HelloServiceDeluxe.say_hello',
                              types=[str])
+        self.rpc_service.add(impl_HelloServiceDeluxe.say_hellos,
+                             name='HelloServiceDeluxe.say_hellos',
+                             types=[str, str])
         self.rpc_service.add(impl_HelloServiceDeluxe.status,
                              name='HelloServiceDeluxe.status',
                              types=[dict])

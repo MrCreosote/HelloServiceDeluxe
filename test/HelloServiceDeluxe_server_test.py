@@ -42,3 +42,11 @@ class HelloServiceDeluxeTest(unittest.TestCase):
             "id": 1,
         })
         self.assertEqual(ret, '{"result": ["Hello, bar. I am a service."], "id": 1}')
+    
+    def test_2(self):
+        ret = self.getImpl().say_hellos(self.getContext(), "Kramer", "Jerry")
+        exp = [
+            'Hi Kramer, you santimonious lickspittle',
+            'Hi Jerry, what a lovely and scintillating person you are'
+        ]
+        self.assertEqual(ret, exp)
